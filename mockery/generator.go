@@ -70,7 +70,7 @@ func NewGenerator(iface *Interface, pkg string, inPackage bool) *Generator {
 		packageRoots:      roots,
 	}
 
-	g.addPackageImportWithName("github.com/stretchr/testify/mock", "mock")
+	g.addPackageImportWithName("github.com/VividCortex/testify/mock", "mock")
 	return g
 }
 

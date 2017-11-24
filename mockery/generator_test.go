@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stretchr/testify/suite"
-	"github.com/stretchr/testify/require"
 	"bufio"
+	"github.com/stretchr/testify/require"
+	"github.com/stretchr/testify/suite"
 )
 
 const pkg = "test"
@@ -217,8 +217,8 @@ func (s *GeneratorSuite) TestGeneratorPrologue() {
 	generator := s.getGenerator(testFile, "Requester", false)
 	expected := `package mocks
 
-import mock "github.com/stretchr/testify/mock"
-import test "github.com/vektra/mockery/mockery/fixtures"
+import mock "github.com/VividCortex/testify/mock"
+import test "github.com/VividCortex/mockery/mockery/fixtures"
 
 `
 	s.checkPrologueGeneration(generator, expected)
@@ -229,8 +229,8 @@ func (s *GeneratorSuite) TestGeneratorPrologueWithImports() {
 	expected := `package mocks
 
 import http "net/http"
-import mock "github.com/stretchr/testify/mock"
-import test "github.com/vektra/mockery/mockery/fixtures"
+import mock "github.com/VividCortex/testify/mock"
+import test "github.com/VividCortex/mockery/mockery/fixtures"
 
 `
 	s.checkPrologueGeneration(generator, expected)
@@ -243,8 +243,8 @@ func (s *GeneratorSuite) TestGeneratorPrologueWithMultipleImportsSameName() {
 
 import fixtureshttp "github.com/vektra/mockery/mockery/fixtures/http"
 import http "net/http"
-import mock "github.com/stretchr/testify/mock"
-import test "github.com/vektra/mockery/mockery/fixtures"
+import mock "github.com/VividCortex/testify/mock"
+import test "github.com/VividCortex/mockery/mockery/fixtures"
 
 `
 	s.checkPrologueGeneration(generator, expected)
@@ -960,7 +960,7 @@ func (s *GeneratorSuite) TestGeneratorWithImportSameAsLocalPackageInpkgNoCycle()
 	pkg := iface.Path
 	gen := NewGenerator(iface, pkg, true)
 	gen.GeneratePrologue(pkg)
-	s.NotContains(gen.buf.String(), `import test "github.com/vektra/mockery/mockery/fixtures/test"`)
+	s.NotContains(gen.buf.String(), `import test "github.com/VividCortex/mockery/mockery/fixtures/test"`)
 }
 
 func (s *GeneratorSuite) TestGeneratorWithImportSameAsLocalPackage() {
@@ -1018,7 +1018,7 @@ func (s *GeneratorSuite) TestPrologueWithImportSameAsLocalPackage() {
 	expected := `package mocks
 
 import fixtures "` + s.getInterfaceRelPath(generator.iface) + `"
-import mock "github.com/stretchr/testify/mock"
+import mock "github.com/VividCortex/testify/mock"
 import test "github.com/vektra/mockery/mockery/fixtures/test"
 
 `
@@ -1034,8 +1034,8 @@ func (s *GeneratorSuite) TestPrologueWithImportFromNestedInterface() {
 
 import fixtureshttp "github.com/vektra/mockery/mockery/fixtures/http"
 import http "net/http"
-import mock "github.com/stretchr/testify/mock"
-import test "github.com/vektra/mockery/mockery/fixtures"
+import mock "github.com/VividCortex/testify/mock"
+import test "github.com/VividCortex/mockery/mockery/fixtures"
 
 `
 
