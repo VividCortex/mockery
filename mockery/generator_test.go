@@ -8,8 +8,8 @@ import (
 	"testing"
 
 	"bufio"
-	"github.com/stretchr/testify/require"
-	"github.com/stretchr/testify/suite"
+	"github.com/VividCortex/testify/require"
+	"github.com/VividCortex/testify/suite"
 )
 
 const pkg = "test"
@@ -241,7 +241,7 @@ func (s *GeneratorSuite) TestGeneratorPrologueWithMultipleImportsSameName() {
 
 	expected := `package mocks
 
-import fixtureshttp "github.com/vektra/mockery/mockery/fixtures/http"
+import fixtureshttp "github.com/VividCortex/mockery/mockery/fixtures/http"
 import http "net/http"
 import mock "github.com/VividCortex/testify/mock"
 import test "github.com/VividCortex/mockery/mockery/fixtures"
@@ -1019,7 +1019,7 @@ func (s *GeneratorSuite) TestPrologueWithImportSameAsLocalPackage() {
 
 import fixtures "` + s.getInterfaceRelPath(generator.iface) + `"
 import mock "github.com/VividCortex/testify/mock"
-import test "github.com/vektra/mockery/mockery/fixtures/test"
+import test "github.com/VividCortex/mockery/mockery/fixtures/test"
 
 `
 
@@ -1032,7 +1032,7 @@ func (s *GeneratorSuite) TestPrologueWithImportFromNestedInterface() {
 	)
 	expected := `package mocks
 
-import fixtureshttp "github.com/vektra/mockery/mockery/fixtures/http"
+import fixtureshttp "github.com/VividCortex/mockery/mockery/fixtures/http"
 import http "net/http"
 import mock "github.com/VividCortex/testify/mock"
 import test "github.com/VividCortex/mockery/mockery/fixtures"

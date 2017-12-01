@@ -29,7 +29,7 @@ Run: `mockery -name=Stringer` and the following will be output to `mocks/Stringe
 ```go
 package mocks
 
-import "github.com/stretchr/testify/mock"
+import "github.com/VividCortex/testify/mock"
 
 type Stringer struct {
 	mock.Mock
@@ -63,7 +63,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/jaytaylor/mockery-example/mocks"
-	"github.com/stretchr/testify/mock"
+	"github.com/VividCortex/testify/mock"
 )
 
 func main() {
@@ -127,7 +127,7 @@ type Proxy interface {
 The argument can be passed through as the return value:
 
 ```go
-import . "github.com/stretchr/testify/mock"
+import . "github.com/VividCortex/testify/mock"
 
 Mock.On("passthrough", AnythingOfType("string")).Return(func(s string) string {
     return s
@@ -138,7 +138,7 @@ Mock.On("passthrough", AnythingOfType("string")).Return(func(s string) string {
 
 `Return` must be passed the same argument count and types as expected by the interface. If the return argument signature of `passthrough` in the above example was instead `(string, error)` in the interface, `Return` would also need a second argument to define the error value.
 
-If any return argument is missing, `github.com/stretchr/testify/mock.Arguments.Get` will emit a panic.
+If any return argument is missing, `github.com/VividCortex/testify/mock.Arguments.Get` will emit a panic.
 
 For example, `panic: assert: arguments: Cannot call Get(0) because there are 0 argument(s). [recovered]` indicates that `Return` was not provided any arguments but (at least one) was expected based on the interface. `Get(1)` would indicate that the `Return` call is missing a second argument, and so on.
 

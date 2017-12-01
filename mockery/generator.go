@@ -613,7 +613,7 @@ func (g *Generator) generateCalled(list *paramList, formattedParamNames string) 
 	// the variadic argument. But the alternative is less accessible because it requires
 	// building a []interface{} before calling Mock methods like On and AssertCalled for
 	// the variadic argument, and creates incompatibility issues with the diff algorithm
-	// in github.com/stretchr/testify/mock.
+	// in github.com/VividCortex/testify/mock.
 	//
 	// This mirroring will allow argument lists for methods like On and AssertCalled to
 	// always resemble the expected calls they describe and retain compatibility.

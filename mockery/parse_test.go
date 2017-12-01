@@ -3,7 +3,7 @@ package mockery
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/VividCortex/testify/assert"
 )
 
 var testFile string

@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/VividCortex/testify/assert"
 )
 
 type GatheringVisitor struct {

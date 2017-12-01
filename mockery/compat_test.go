@@ -3,12 +3,12 @@ package mockery
 import (
 	"testing"
 
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/suite"
-	"github.com/vektra/mockery/mockery/fixtures/mocks"
+	"github.com/VividCortex/mockery/mockery/fixtures/mocks"
+	"github.com/VividCortex/testify/mock"
+	"github.com/VividCortex/testify/suite"
 )
 
-// CompatSuite covers compatbility with github.com/stretchr/testify/mock.
+// CompatSuite covers compatbility with github.com/VividCortex/testify/mock.
 type CompatSuite struct {
 	suite.Suite
 }
